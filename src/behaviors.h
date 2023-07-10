@@ -18,11 +18,11 @@ struct Growth : public Behavior {
 
   void Run(Agent* agent) override {  // Define the behavior's Run method
     if (auto* cell =
-            dynamic_cast<MyCell*>(agent)) {  // Check if the agent is a MyCell
+            dynamic_cast<Cell*>(agent)) {  // Check if the agent is a MyCell
 
       // If the cell is smaller than 10, grow it
       if (cell->GetDiameter() < 10) {
-        
+
         // Increase the cell's volume based on the growth speed
         cell->ChangeVolume(400);
 
@@ -45,16 +45,14 @@ struct GrowthAndDivision : public Behavior {
   virtual ~GrowthAndDivision() {}
 
   void Run(Agent* agent) override {
-    if (auto* cell = dynamic_cast<MyCell*>(agent)) {
+    if (auto* cell = dynamic_cast<Cell*>(agent)) {
       auto* random = Simulation::GetActive()->GetRandom();
       if (cell->GetDiameter() < division_threshold_diameter_) {
         cell->ChangeVolume(growth_speed_);
 
       } else {
-        if (cell->GetCanDivide() && random->Uniform(0, 1) < 0.8) {
+        if (random->Uniform(0, 1) < 0.8) {
           cell->Divide();
-        } else {
-          cell->SetCanDivide(false);  // this cell won't divide anymore
         }
       }
     }

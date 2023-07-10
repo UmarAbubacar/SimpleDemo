@@ -11,8 +11,7 @@
         "export_visualization": true,
         "visualization_interval": 1,
         "visualize_agents": {
-            "Cell": [],
-            "MyCell": ["cell_color_"]
+            "Cell": []
         },
         "visualize_diffusion": [
             {

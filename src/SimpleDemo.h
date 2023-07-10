@@ -14,7 +14,6 @@
 #ifndef SIMPLEDEMO_H_
 #define SIMPLEDEMO_H_
 
-#include "MyCell.h"
 #include "behaviors.h"
 #include "biodynamo.h"
 
@@ -31,15 +30,19 @@ inline int Simulate(int argc, const char** argv) {
   //    in this example: single cell at the origin with a
   //    diameter of 8.0 (no unit associated).
 
-  auto* cell = new MyCell();
+  auto* cell = new Cell();
   cell->SetDiameter(8.0);
   cell->SetPosition({0, 0, 0});
   // mass is used to compute mechanical interactions of the cell
   cell->SetMass(1.0);
-  cell->SetCellColor(1);
 
   // add agent to the simulation
   rm->AddAgent(cell);
+
+  // to run the simulation type in your terminal:
+  // bdm run
+  // when its done open parview and load the file with:
+  // paraview
 
   // ##########################################################################
   // --------------------- Cell with Growth behaviour  ------------------------
@@ -61,12 +64,11 @@ inline int Simulate(int argc, const char** argv) {
   // TODO: add a growth and division behaviour to a new cell same as before at
   //        position (30, 0, 0)Add a new growth and division behaviour
   //        (GrowthAndDivision()) using the method AddBehavior() to a new cell
-  //        (you can call it cell2) remember to set the cell's can_divide_ to
-  //        true
+  //        (you can call it cell2) 
 
   // Solution goes here:
   // Hint: you can copy the code from the above example and modify it
-  auto* cell2 = new MyCell();
+  //       auto* cell2 = new Cell(); ...
 
 
 
@@ -83,11 +85,10 @@ inline int Simulate(int argc, const char** argv) {
   //    in this example: adding a chemotaxis behaviour to a new cell (cell3)
 
   // Solution:
-  auto* cell3 = new MyCell();
+  auto* cell3 = new Cell();
   cell3->SetDiameter(8.0);
   cell3->SetPosition({60, 0, 0});
   cell3->SetMass(1.0);
-  cell3->SetCellColor(3);
 
   enum Substances { kSubstance };  // Define an enum for the substances
   // this can be a list eg {kSubstance1, kSubstance2, kSubstance3}
