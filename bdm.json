@@ -1,0 +1,25 @@
+{
+    "bdm::Param": {
+        "progress_bar": true,
+        "bound_space": true,
+        "min_bound": -200,
+        "max_bound": 200,
+        "cache_neighbors": true,
+        "detect_static_agents": true,
+        "remove_output_dir_contents": true,
+        "random_seed": 2688649975,
+        "export_visualization": true,
+        "visualization_interval": 1,
+        "visualize_agents": {
+            "Cell": [],
+            "MyCell": ["cell_color_"]
+        },
+        "visualize_diffusion": [
+            {
+                "name": "substance",
+                "concentration": true,
+                "gradient": false
+            }
+        ]
+    }
+}
