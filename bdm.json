@@ -1,6 +1,6 @@
 {
     "bdm::Param": {
-        "progress_bar": true,
+        "use_progress_bar": true,
         "bound_space": true,
         "min_bound": -200,
         "max_bound": 200,
