@@ -50,7 +50,7 @@ inline int Simulate(int argc, const char** argv) {
   //    defined
 
   auto growth_behavior = new Growth();
-  cell->AddBehavior(growth_behavior);
+  // cell->AddBehavior(growth_behavior);
 
   // ##########################################################################
   // ----------------- Cell with Growth and Division behaviour  ---------------
