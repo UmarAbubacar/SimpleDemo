@@ -56,37 +56,31 @@ inline int Simulate(int argc, const char** argv) {
   // ----------------- Cell with Growth and Division behaviour  ---------------
   // ##########################################################################
 
-  // ######### TODO #########
   // TASK 3: Define cell with growth and division behaviour
-  //    in this example: adding a growth and division behaviour to a new cell at
-  //    position (30, 0, 0)
-  // Task: Add a new growth and division behaviour (GrowthAndDivision()) using
-  // the method AddBehavior() to a new cell (you can call it cell2)
-  // remember to set the cell's can_divide_ to true
+  //
+  // TODO: add a growth and division behaviour to a new cell same as before at
+  //        position (30, 0, 0)Add a new growth and division behaviour
+  //        (GrowthAndDivision()) using the method AddBehavior() to a new cell
+  //        (you can call it cell2) remember to set the cell's can_divide_ to
+  //        true
 
-  // Solution:
+  // Solution goes here:
   // Hint: you can copy the code from the above example and modify it
   auto* cell2 = new MyCell();
-  cell2->SetDiameter(8.0);
-  cell2->SetPosition({30, 0, 0});
-  cell2->SetMass(1.0);
-  cell2->SetCellColor(2);
 
-  auto growth_and_div = new GrowthAndDivision();
-  growth_and_div->SetGrowthSpeed(1000);
-  cell2->AddBehavior(growth_and_div);
 
-  cell2->SetCanDivide(true);
 
-  rm->AddAgent(cell2);
+
+
+
+
 
   // ##########################################################################
   // --------------------- Cell with Chemotaxis behaviour  ---------------------
   // ##########################################################################
 
   // TASK: 4: Define a new cell with a chemotaxi behaviour
-  //    in this example: adding a chemotaxis behaviour to a new cell at position
-  //    (60, 0, 0)
+  //    in this example: adding a chemotaxis behaviour to a new cell (cell3)
 
   // Solution:
   auto* cell3 = new MyCell();
