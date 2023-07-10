@@ -72,7 +72,7 @@ struct GrowthAndDivision : public Behavior {
   // Here 400 is the speed and the change to the volume is based on the
   // simulation time step.
   // The default here is 0.01 for each timestep, not 1.
-  double growth_speed_ = 1000;
+  double growth_speed_ = 800;
   double division_threshold_diameter_ = 10;
 };
 
