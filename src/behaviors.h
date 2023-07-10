@@ -19,14 +19,16 @@ struct Growth : public Behavior {
   void Run(Agent* agent) override {  // Define the behavior's Run method
     if (auto* cell =
             dynamic_cast<MyCell*>(agent)) {  // Check if the agent is a MyCell
-      if (cell->GetDiameter() <
-          10) {  // If the cell is smaller than 10, grow it
+
+      // If the cell is smaller than 10, grow it
+      if (cell->GetDiameter() < 10) {
+        
+        // Increase the cell's volume based on the growth speed
+        cell->ChangeVolume(400);
 
         // Here 400 is the speed and the change to the volume is based on the
         // simulation time step.
         // The default here is 0.01 for each timestep, not 1.
-        cell->ChangeVolume(
-            400);  // Increase the cell's volume based on the growth speed
       }
     }
   }
