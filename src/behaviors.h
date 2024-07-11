@@ -12,9 +12,9 @@ namespace bdm {
 struct Growth : public Behavior {
   BDM_BEHAVIOR_HEADER(Growth, Behavior, 1);  // Define the behavior class
 
-  Growth() { AlwaysCopyToNew(); }            // Constructor for the behavior
+  Growth() { AlwaysCopyToNew(); }  // Constructor for the behavior
 
-  virtual ~Growth() {}               // Virtual destructor for the behavior
+  virtual ~Growth() {}  // Virtual destructor for the behavior
 
   void Run(Agent* agent) override {  // Define the behavior's Run method
     if (auto* cell =
@@ -22,7 +22,6 @@ struct Growth : public Behavior {
 
       // If the cell is smaller than 10, grow it
       if (cell->GetDiameter() < 10) {
-
         // Increase the cell's volume based on the growth speed
         cell->ChangeVolume(400);
 
@@ -46,11 +45,14 @@ struct GrowthAndDivision : public Behavior {
 
   void Run(Agent* agent) override {
     if (auto* cell = dynamic_cast<Cell*>(agent)) {
+      // Get a pointer to the simulation's random number generator
       auto* random = Simulation::GetActive()->GetRandom();
       if (cell->GetDiameter() < division_threshold_diameter_) {
         cell->ChangeVolume(growth_speed_);
 
       } else {
+        // If the cell's diameter is greater than or equal to the division
+        // threshold, divide the cell with a probability of 0.8
         if (random->Uniform(0, 1) < 0.8) {
           cell->Divide();
         }
