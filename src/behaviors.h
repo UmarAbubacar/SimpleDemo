@@ -18,7 +18,7 @@ struct Growth : public Behavior {
 
   void Run(Agent* agent) override {  // Define the behavior's Run method
     if (auto* cell =
-            dynamic_cast<Cell*>(agent)) {  // Check if the agent is a MyCell
+            dynamic_cast<Cell*>(agent)) {  // Check if the agent is a Cell
 
       // If the cell is smaller than 10, grow it
       if (cell->GetDiameter() < 10) {
