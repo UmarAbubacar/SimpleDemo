@@ -42,7 +42,7 @@ inline int Simulate(int argc, const char** argv) {
   // to run the simulation type in your terminal:
   // bdm run
   // when its done open parview and load the file with:
-  // paraview
+  // bdm view
 
   // ##########################################################################
   // --------------------- Cell with Growth behaviour  ------------------------
